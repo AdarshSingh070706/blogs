@@ -59,7 +59,7 @@ export default function SearchDialog() {
             <div className="bg-white shadow-xl p-5 rounded-lg w-full sm:w-1/2 md:w-1/3 text-black hover:shadow-2xl transition duration-300 ease-in-out">
               <img
                 className="w-full h-40 object-cover rounded-md mb-4"
-                src="https://via.placeholder.com/350x200"
+                src="https://sdmntprwestus.oaiusercontent.com/files/00000000-5a6c-6230-81d8-341579d03c06/raw?se=2025-04-15T05%3A38%3A42Z&sp=r&sv=2024-08-04&sr=b&scid=b887f647-0da7-5e46-9053-0fbd04505c58&skoid=72d71449-cf2f-4f10-a498-f160460104ee&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-15T04%3A24%3A11Z&ske=2025-04-16T04%3A24%3A11Z&sks=b&skv=2024-08-04&sig=pP%2BeAr5m5sholGVdGW26iuLpWyGY6bm4CoyALbVKzcc%3D"
                 alt="Blog Thumbnail"
               />
               <p className="text-sm text-gray-600 mb-2">12 Apr 2025</p>

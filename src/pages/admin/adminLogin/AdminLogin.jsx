@@ -84,7 +84,7 @@ export default function AdminLogin() {
                         {/* Login Button */}
                         <Button
                             fullWidth
-                            size="lg"
+                            size="xl"
                             className={`text-base font-semibold shadow-md hover:shadow-lg transition duration-300 ${
                                 isDark
                                     ? "bg-slate-100 text-slate-900 hover:bg-slate-200"

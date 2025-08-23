@@ -15,7 +15,7 @@ function AllBlogs() {
     {
       date: '25 Sep 2023',
       title: 'React Introduction',
-      description: 'Learn what React is, how it works, and why it’s used for building modern UIs with components.',
+      description: 'Learn what React is, how it works, and why it`s used for building modern UIs with components.',
       image: '/assets/reactimage.webp',
     },
     {

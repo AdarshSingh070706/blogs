@@ -1,19 +1,14 @@
 import React from 'react'
-import Navbar from '../navbar/Navbar'
-import Footer from '../footer/Footer'
-import { navbar } from '@material-tailwind/react'
-navbar
-function Layout({children}) {
-  return (
-    <div>
-      <Navbar/>
-      <div className='content min-h-screen'>
-          {children}
-      </div>
 
-      <Footer/>
+function Layout({ children }) {
+  return (
+    <div className="min-h-screen flex flex-col">
+      {/* Content full height */}
+      <main className="flex-grow">
+        {children}
+      </main>
     </div>
   )
 }
 
-export default Layout
+export default Layout;

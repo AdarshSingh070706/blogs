@@ -1,38 +1,42 @@
-import{
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
-import Home from "./pages/home/Home";
-import Blog from "./pages/blog/Blog";
-import AllBlogs from "./pages/allBlogs/AllBlogs";
-import NoPage from "./pages/nopage/NoPage";
-import BlogInfo from "./pages/blogInfo/BlogInfo";
-import AdminLogin from "./pages/admin/adminLogin/AdminLogin";
-import Dashboard from "./pages/admin/dashboard/Dashboard";
-import MyState from "./context/data/myState";
-import {Toaster} from 'react-hot-toast'
-import CreateBlog from "./pages/admin/createBlog/createBlog";
+import { useState, useEffect } from 'react'
+import MyState from './context/data/myState'
+import {  Footer, AppNavbar } from './components/index'
+import { Outlet } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { getCurrentUser } from './conf/authService'
+import { logout } from './store/authSlice'
 
-function App(){
-  return( 
+
+function App() {
+  const [loading, setLoading] = useState(true)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    getCurrentUser()
+      .then((user) => {
+        if (user) {
+          dispatch(login({ userData: user }))
+        } else {
+          dispatch(logout())
+        }
+      })
+      .finally(() => setLoading(false))
+  }, [])
+
+  return !loading ? (
     <MyState>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/blog" element={<Blog/>}/>
-          <Route path="/allblogs" element={<AllBlogs/>}/>
-          <Route path="/bloginfo/:id" element={<BlogInfo/>}/>
-          <Route path="/adminlogin" element={<AdminLogin/>}/>
-          <Route path="/dashboard" element={<Dashboard/>}/>
-          <Route path="/createblog" element={<CreateBlog/>}/>
-          <Route path="/*" element={<NoPage/>}/>
-        </Routes>
-        <Toaster/>
-      </Router>
-    </MyState>
-  )
-}
+      <div className="flex flex-col min-h-screen">
 
+        <AppNavbar />
+
+        <main className="flex-grow flex items-center justify-center">
+          <Outlet />
+        </main>
+
+        <Footer />
+      </div>
+    </MyState>
+  ) : null
+}
 
 export default App

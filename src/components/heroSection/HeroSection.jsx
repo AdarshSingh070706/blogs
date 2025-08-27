@@ -14,7 +14,7 @@ function HeroSection() {
                 : 'bg-gradient-to-r from-purple-700 via-indigo-600 to-blue-500'
             } text-white`}>
             {/* Hero Section  */}
-            <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <div className=" flex px-5 py-24 items-center justify-center flex-col">
                 {/* Main Content  */}
                 <main className="relative z-10">
                     <div className="text-center space-y-6">

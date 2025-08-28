@@ -7,6 +7,8 @@ import { login as userLogin } from '../store/authSlice'
 import { auth } from '../conf/conf'
 import { getCurrentUser } from '../conf/authService'
 import { Button, Input, Logo } from './index'
+import { FaGoogle, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
 
 function Signup() {
   const navigate = useNavigate()
@@ -30,64 +32,86 @@ function Signup() {
       setError(error.message)
     }
   }
-  return (
-    <div className="flex items-center justify-center">
-      <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
-        <div className="mb-2 flex justify-center">
-          <span className="inline-block w-full max-w-[100px]">
-            <Logo width="100%" />
-          </span>
-        </div>
-        <h2 className="text-center text-2xl font-bold leading-tight">Sign up to create account</h2>
-        <p className="mt-2 text-center text-base text-black/60">
-          Already have an account?&nbsp;
-          <Link
-            to="/login"
-            className="font-medium text-primary transition-all duration-200 hover:underline"
-          >
-            Sign In
-          </Link>
-        </p>
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+    return (
+    <div className="flex items-center justify-center min-h-screen w-full bg-gradient-to-r from-gray-400 via-gray-500 to-gray-900">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+        <h1 className="font-bold text-3xl mb-6 text-center">Register</h1>
 
-        <form onSubmit={handleSubmit(create)}>
-          <div className='space-y-5'>
-            <Input
-              label="Full Name: "
-              placeholder="Enter your full name"
-              {...register("name", {
+        <form className="space-y-5" onSubmit={handleSubmit(create)}>
+          {/* Username */}
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Username"
+                {...register("name", {
                 required: true,
               })}
+              className="bg-gray-200 rounded-lg p-3 w-full text-base focus:outline-none"
             />
-            <Input
-              label="Email: "
-              placeholder="Enter your email"
+            <FaUser className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600" />
+          </div>
+
+          {/* Email */}
+          <div className="relative">
+            <input
               type="email"
-              {...register("email", {
+              placeholder="Email"
+               {...register("email", {
                 required: true,
                 validate: {
                   matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
                     "Email address must be a valid address",
                 }
               })}
+              className="bg-gray-200 rounded-lg p-3 w-full text-base focus:outline-none"
             />
-            <Input
-              label="Password: "
+            <FaEnvelope className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600" />
+          </div>
+
+          {/* Password */}
+          <div className="relative">
+            <input
               type="password"
-              placeholder="Enter your password"
+              placeholder="Password"
               {...register("password", {
                 required: true,
               })}
+              className="bg-gray-200 rounded-lg p-3 w-full text-base focus:outline-none"
             />
-            <Button type="submit" className="w-full">
-              Create Account
-            </Button>
+            <FaLock className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600" />
           </div>
+
+          <button
+            type="submit"
+            className="bg-gray-700 hover:bg-gray-800 w-full py-3 rounded-lg text-white transition cursor-pointer"
+          >
+            Register
+          </button>
+
+          <p className="text-sm text-center text-gray-400">
+            or register with social platforms
+          </p>
+
+          {/* Social Icons */}
+          <div className="flex justify-center gap-4 text-2xl">
+            <FaGoogle className="p-2 border rounded-md hover:bg-gray-100 cursor-pointer" />
+            <FaFacebook className="p-2 border rounded-md hover:bg-gray-100 cursor-pointer" />
+            <FaGithub className="p-2 border rounded-md hover:bg-gray-100 cursor-pointer" />
+            <FaLinkedin className="p-2 border rounded-md hover:bg-gray-100 cursor-pointer" />
+          </div>
+
+          <p className="text-sm text-center mt-4">
+            Already have an account?{" "}
+            <Link to="/login" className="text-gray-700 font-semibold hover:underline">
+              Login
+            </Link>
+          </p>
         </form>
       </div>
-
     </div>
-  )
-}
+  );
+};
+
+
 
 export default Signup

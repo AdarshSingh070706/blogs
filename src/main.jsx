@@ -14,7 +14,7 @@ import MyState from "./context/data/myState";
 import CreateBlog from "./pages/admin/createBlog/createBlog";
 import { Provider } from 'react-redux'
 import store from './store/store.js'
-import { AuthLayout, Login, Signup } from './components/index.js'
+import { AuthLayout, Login, SearchDialog, Signup } from './components/index.js'
 
 
 const router = createBrowserRouter([
@@ -47,6 +47,14 @@ const router = createBrowserRouter([
         element: (
           <AuthLayout>
             <Blog />
+          </AuthLayout>
+        )
+      },
+            {
+        path: "/search-box",
+        element: (
+          <AuthLayout>
+            <SearchDialog />
           </AuthLayout>
         )
       },

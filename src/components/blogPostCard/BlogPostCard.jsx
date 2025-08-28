@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import { Button } from "@material-tailwind/react";
 import myContext from "../../context/data/myContext";
+import AllBlogs from "../../pages/allBlogs/AllBlogs";
+import { useNavigate } from "react-router-dom";
 
 function BlogPostCard() {
   const context = useContext(myContext);
   const { mode } = context;
-
+ const navigate = useNavigate()
   
  const blogPosts = [
   {
@@ -68,7 +70,8 @@ function BlogPostCard() {
                 ? "bg-slate-300 text-slate-900 hover:bg-slate-200"
                 : "bg-slate-900 text-slate-100 hover:bg-slate-800"
             }`}
-          >
+            onClick={() => navigate("/allblog")}
+            >
             See More
           </Button>
         </div>

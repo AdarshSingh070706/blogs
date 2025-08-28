@@ -13,6 +13,7 @@ import SearchDialog from "../searchDialog/SearchDialog";
 import ShareDialogBox from "../shareDialogBox/ShareDialogBox";
 import LogoutBtn from "./LogoutBtn";
 import { useSelector } from "react-redux";
+import { BsSun, BsMoon } from "react-icons/bs";
 
 export default function AppNavbar() {
   const authStatus = useSelector((state) => state.auth.status);
@@ -69,7 +70,7 @@ export default function AppNavbar() {
               <Link
                 key={i.slug}
                 to={i.slug}
-                className={mode === "light" ? "text-black" : "text-white"}
+                className={mode === "light" ? "text-gray-200" : "text-white"}
               >
                 {i.name}
               </Link>
@@ -78,7 +79,7 @@ export default function AppNavbar() {
         </div>
 
         {/* Right controls */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 ">
           <SearchDialog />
           <div className="hidden lg:block">
             <ShareDialogBox />
@@ -99,16 +100,16 @@ export default function AppNavbar() {
           </Link>
 
           {/* Dark/Light toggle (icon just for demo) */}
-          <IconButton
-            onClick={toggleMode}
-            className="rounded-full p-1 bg-gray-200 hover:bg-gray-300 text-gray-700"
-          >
-            {mode === "light" ? (
-              <AiOutlineSearch className="w-6 h-6" />
-            ) : (
-              <AiOutlineShareAlt className="w-6 h-6" />
-            )}
-          </IconButton>
+         <IconButton
+  onClick={toggleMode}
+  className="rounded-full p-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200"
+>
+  {mode === "light" ? (
+    <BsMoon className="w-5 h-5" />
+  ) : (
+    <BsSun className="w-5 h-5" />
+  )}
+</IconButton>
 
           {/* Mobile menu button */}
           <IconButton

@@ -4,7 +4,7 @@ import {  Footer, AppNavbar } from './components/index'
 import { Outlet } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { getCurrentUser } from './conf/authService'
-import { logout } from './store/authSlice'
+import { login,logout } from './store/authSlice'
 
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
 
         <AppNavbar />
 
-        <main className="flex-grow flex items-center justify-center">
+        <main className="flex-grow ">
           <Outlet />
         </main>
 

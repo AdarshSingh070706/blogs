@@ -14,19 +14,19 @@ function BlogPostCard() {
     title: "React Introduction",
     date: "01 Mar 2025",
     description: "Understand what React is and how it helps in building UIs.",
-    image: "/assets/reactimage.webp", // ✅ local path
+    image: "/assets/reactimage.webp", 
   },
   {
     title: "JavaScript Basics",
     date: "08 Mar 2025",
     description: "Learn JavaScript fundamentals every frontend dev must know.",
-    image: "/assets/javabasic.webp", // ✅ local path
+    image: "/assets/javabasic.webp", 
   },
   {
     title: "Tailwind CSS Tips",
     date: "12 Mar 2025",
     description: "Boost your Tailwind CSS workflow with these practical tips.",
-    image: "/assets/tailcss.jpg", // ✅ local path
+    image: "/assets/tailcss.jpg",
   },
 ];
 

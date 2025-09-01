@@ -82,14 +82,6 @@ const router = createBrowserRouter([
           </AuthLayout>
         )
       },
-      // {
-      //   path: "/adminlogin",
-      //   element: (
-      //     <AuthLayout authentication={false}>
-      //       <AdminLogin />
-      //     </AuthLayout>
-      //   )
-      // },
       {
         path: "/dashboard",
         element: (

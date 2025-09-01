@@ -29,7 +29,7 @@ export default function ShareDialogBox() {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(currentUrl);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // Hide tooltip after 2 seconds
+    setTimeout(() => setCopied(false), 2000); 
   };
 
   return (
@@ -111,7 +111,7 @@ export default function ShareDialogBox() {
             </Button>
           </div>
 
-          {/* Footer */}
+         
           <div className="text-center text-xs text-gray-500 dark:text-gray-400 mt-4">
             <p>Powered by Adarsh 🚀</p>
           </div>

@@ -16,7 +16,7 @@ export default function SearchDialog() {
 
   return (
     <Fragment>
-      {/* Search Icon */}
+
       <div
         onClick={handleOpen}
         role="button"
@@ -27,7 +27,7 @@ export default function SearchDialog() {
         <AiOutlineSearch size={22} color="white" />
       </div>
 
-      {/* Dialog */}
+
       <Dialog
         open={open}
         handler={handleOpen}
@@ -40,7 +40,7 @@ export default function SearchDialog() {
         }}
       >
         <DialogBody className="overflow-y-auto max-h-[80vh] scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
-          {/* Input */}
+       
           <div className="flex justify-center mb-6">
             <Input
               color="white"
@@ -54,7 +54,7 @@ export default function SearchDialog() {
             />
           </div>
 
-          {/* Blog Card */}
+        
           <div className="flex justify-center flex-wrap gap-6 mb-6">
             <div className="bg-white shadow-xl p-5 rounded-lg w-full sm:w-1/2 md:w-1/3 text-black hover:shadow-2xl transition duration-300 ease-in-out">
               <img
@@ -67,7 +67,7 @@ export default function SearchDialog() {
             </div>
           </div>
 
-          {/* Footer */}
+         
           <div className="text-center text-sm text-gray-500 font-medium mt-6">
             <h1>Powered by Adarsh</h1>
           </div>

@@ -99,7 +99,7 @@ export default function AppNavbar() {
             />
           </Link>
 
-          {/* Dark/Light toggle (icon just for demo) */}
+          {/* Dark/Light toggle */}
          <IconButton
   onClick={toggleMode}
   className="rounded-full p-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200"
